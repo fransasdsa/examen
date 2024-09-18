@@ -1,0 +1,21 @@
+spring.application.name=ms-config-server
+
+server:
+port: 8888
+
+spring:
+cloud:
+config:
+server:
+git:
+uri: https://github.com/fransasdsa/examen.git
+clone-on-start: true
+
+application:
+name: ms-config-server
+
+management:
+endpoints:
+web:
+exposure:
+include: "*"
