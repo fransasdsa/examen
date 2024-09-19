@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/EXAMENN.iml" filepath="$PROJECT_DIR$/.idea/EXAMENN.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ms-config-server/ms-config-server.iml" filepath="$PROJECT_DIR$/ms-config-server/ms-config-server.iml" />
     </modules>
   </component>
 </project>

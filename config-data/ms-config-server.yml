@@ -1,4 +1,4 @@
-# ms-config-server/src/main/resources/application.yml
+# ms-config-server/src/main/resources/ms-auth-server.yml
 server:
   port: 8888
 

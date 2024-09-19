@@ -1,19 +1,18 @@
-# ms-config-server/src/main/resources/application.yml
 server:
-port: 8888
-
+  port: 8888
 spring:
-application:
-name: ms-config-server
-cloud:
-config:
-server:
-git:
-uri: https://github.com/fransasdsa/examen.git
-clone-on-start: true
+  application:
+    name: ms-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/fransasdsa/examen.git
+          searchPaths: config-data
+          clone-on-start: true
 
-management:
-endpoints:
-web:
-exposure:
-include: "*"
+
+  security:
+    user:
+      name: root
+      password: 123456

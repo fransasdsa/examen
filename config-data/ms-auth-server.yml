@@ -1,0 +1,24 @@
+# ms-auth-service/src/main/resources/ms-auth-server.yml
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ms-auth-service
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    hibernate:
+      ddl-auto: update
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+security:
+  oauth2:
+    authorization:
+      jwt:
+        signing-key: abcdef1234567890 # Clave secreta para firmar tokens JWT

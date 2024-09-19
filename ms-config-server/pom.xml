@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -12,7 +12,10 @@
 	<artifactId>ms-config-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ms-config-server</name>
-	<description>ms-config-server</description>
+	<description>Eureka Server para UPEU</description>
+
+
+
 	<url/>
 	<licenses>
 		<license/>
@@ -40,33 +43,63 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
-
-
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
-
+		<!-- Spring Boot Actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
+		<!-- Spring Boot Configuration Processor (para procesamiento de configuraciones) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<!-- Spring Boot Starter Test (para pruebas unitarias y de integración) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring Boot Starter -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Starter Security (para añadir autenticación y autorización) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- Spring Security Test (para pruebas de seguridad) -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>annotationProcessor</scope>
 		</dependency>
 	</dependencies>
 
@@ -78,5 +111,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

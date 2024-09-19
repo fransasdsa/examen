@@ -1,0 +1,87 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ms-gateway-service
+
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: ms-gateway-service
+
+    discovery:
+      enabled: true
+      service-id: ms-gateway-service
+
+    gateway:
+      routes:
+        - id: ms-auth-service
+          uri: lb://ms-auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+        - id: ms-student-service
+          uri: lb://ms-student-service
+          predicates:
+            - Path=/students/**
+          filters:
+            - StripPrefix=1
+
+        - id: ms-degree-service
+          uri: lb://ms-degree-service
+          predicates:
+            - Path=/degrees/**
+          filters:
+            - StripPrefix=1
+
+        - id: ms-advisor-service
+          uri: lb://ms-advisor-service
+          predicates:
+            - Path=/advisors/**
+          filters:
+            - StripPrefix=1
+
+        - id: ms-payment-service
+          uri: lb://ms-payment-service
+          predicates:
+            - Path=/payments/**
+          filters:
+            - StripPrefix=1
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081 # URL de tu Auth Service
+          jwk-set-uri: http://localhost:8081/.well-known/jwks.json
+
+web:
+  cors:
+    allowed-origins: "*"
+    allowed-methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+    allowed-headers: "*"
+    allow-credentials: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework: DEBUG
