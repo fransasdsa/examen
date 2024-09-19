@@ -1,4 +1,4 @@
-
+# ms-config-server/src/main/resources/application.yml
 server:
 port: 8888
 
@@ -9,7 +9,7 @@ cloud:
 config:
 server:
 git:
-uri: https://github.com/tu-usuario/upeu-grades-management/config-data
+uri: https://github.com/fransasdsa/examen.git
 clone-on-start: true
 
 management:
