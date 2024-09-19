@@ -3,8 +3,7 @@ package com.upeu.student.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
+import jakarta.persistence.*;  // Usando jakarta.persistence para estar alineado con Spring Boot 3.x
 
 @Entity
 @Table(name = "students")
