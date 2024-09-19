@@ -4,12 +4,15 @@ import com.upeu.student.entity.Student;
 import com.upeu.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;  // Importando desde Jakarta
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/students")
+@Validated // Para activar las validaciones en los métodos
 public class StudentController {
 
     @Autowired
@@ -17,8 +20,9 @@ public class StudentController {
 
     // Endpoint para crear o actualizar un estudiante
     @PostMapping
-    public Student createOrUpdateStudent(@RequestBody Student student) {
-        return studentService.saveStudent(student);
+    public ResponseEntity<Student> createOrUpdateStudent(@Valid @RequestBody Student student) {
+        Student savedStudent = studentService.saveStudent(student);
+        return ResponseEntity.ok(savedStudent);
     }
 
     // Endpoint para obtener todos los estudiantes
