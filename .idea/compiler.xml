@@ -8,16 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ms-config-server" />
-        <module name="ms-degree-service" />
         <module name="ms-eureka-server" />
         <module name="ms-student-service" />
+        <module name="ms-degree-service" />
         <module name="ms-gateway-service" />
         <module name="ms-auth-service" />
+        <module name="ms-advisor-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ms-advisor-service" options="-parameters" />
       <module name="ms-auth-service" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
       <module name="ms-degree-service" options="-parameters" />

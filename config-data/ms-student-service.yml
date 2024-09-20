@@ -1,4 +1,4 @@
-# ms-student-service/src/main/resources/application.yml
+# ms-student-service/src/main/resources/ms-degree-service.yml
 server:
 port: 8082
 
@@ -7,9 +7,9 @@ application:
 name: ms-student-service
 
 datasource:
-url: jdbc:mysql://localhost:3306/studentdb?createDatabaseIfNotExist=true
+url: jdbc:mysql://localhost:3306/ms-student-service
 username: root
-password: rootpassword
+password:
 driver-class-name: com.mysql.cj.jdbc.Driver
 hikari:
 maximum-pool-size: 5

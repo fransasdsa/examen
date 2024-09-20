@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/ms-auth-service/pom.xml" />
         <option value="$PROJECT_DIR$/ms-student-service/pom.xml" />
         <option value="$PROJECT_DIR$/ms-degree-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-advisor-service/pom.xml" />
       </list>
     </option>
   </component>
