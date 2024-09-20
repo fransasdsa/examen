@@ -1,0 +1,18 @@
+# ms-degree-service/src/main/resources/application.yml
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ms-degree-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ms-degree-service
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
