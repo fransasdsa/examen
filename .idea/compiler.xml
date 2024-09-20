@@ -11,6 +11,7 @@
         <module name="ms-eureka-server" />
         <module name="ms-student-service" />
         <module name="ms-degree-service" />
+        <module name="ms-payment-service" />
         <module name="ms-gateway-service" />
         <module name="ms-auth-service" />
         <module name="ms-advisor-service" />
@@ -25,6 +26,7 @@
       <module name="ms-degree-service" options="-parameters" />
       <module name="ms-eureka-server" options="-parameters" />
       <module name="ms-gateway-service" options="-parameters" />
+      <module name="ms-payment-service" options="-parameters" />
       <module name="ms-student-service" options="-parameters" />
     </option>
   </component>

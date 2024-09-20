@@ -1,33 +1,28 @@
 server:
-  port: 8083
+  port: 8086
 
 spring:
   application:
-    name: ms-degree-service
-
+    name: ms-payment-service
   datasource:
-    url: jdbc:mysql://localhost:3306/ms-degree-service
+    url: jdbc:mysql://localhost:3306/ms-payment-service
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      maximum-pool-size: 5
-
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  cloud:
+      compatibility-verifier:
+        enabled: false
+
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
